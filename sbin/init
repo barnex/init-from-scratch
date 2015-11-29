@@ -1,0 +1,7 @@
+#! /bin/sh
+# Init shim to prevent bricking the system.
+# Drops a root shell from which we can exec our own init process,
+# or we can exit the shell, conveniently getting into systemd.
+/bin/loadkeys -q /keys.map
+/bin/sh
+exec /lib/systemd/systemd
