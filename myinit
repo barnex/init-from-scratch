@@ -1,2 +1,8 @@
 #! /bin/sh
-loadkeys 
+/bin/echo ## my init ##
+/bin/loadkeys -q /keys.map
+mkdir -f /run/resolvconf
+echo "nameserver 192.168.122.1" >  /run/resolvconf/resolv.conf
+/sbin/dhclient -nw
+/bin/bash
+exec /lib/systemd/systemd

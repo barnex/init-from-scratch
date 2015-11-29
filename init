@@ -3,8 +3,8 @@
 # Drops a root shell from which we can exec our own init process,
 # or we can exit the shell, conveniently getting into systemd.
 /bin/loadkeys -q /keys.map
-mkdir -f /run/resolvconf
-echo "nameserver 192.168.122.1" >  /run/resolvconf/resolv.conf
-/sbin/dhclient -nw
+/bin/echo
+/bin/echo Type exit for normal init or exec /sbin/myint
+/bin/echo
 /bin/bash
 exec /lib/systemd/systemd
