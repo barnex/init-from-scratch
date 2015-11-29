@@ -1,0 +1,6 @@
+#! /bin/bash
+# installs our init in the filesystem root.
+set -e
+set -v
+cp -v keys.map /
+cp -v init /sbin
